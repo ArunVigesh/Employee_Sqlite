@@ -17,7 +17,7 @@ import android.database.sqlite.SQLiteOpenHelper;
         private static final String COLUMN_PASSWORD = "password";
 
         private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
-                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME + " TEXT,"
+                + COLUMN_ID + " INTEGER PRIMARY KEY ," + COLUMN_NAME + " TEXT,"
                 +COLUMN_PHONE+"INTEGER" + COLUMN_EMAIL + " TEXT," + COLUMN_PASSWORD + " TEXT" + ")";
 
         public DatabaseHelper(Context context) {
@@ -37,7 +37,7 @@ import android.database.sqlite.SQLiteOpenHelper;
         public void addEmp(input inp) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
-            //values.put(COLUMN_ID, inp.getId());
+            values.put(COLUMN_ID, inp.getId());
             values.put(COLUMN_NAME, inp.getName());
             values.put(COLUMN_PHONE, inp.getPhone());
             values.put(COLUMN_EMAIL, inp.getEmail());

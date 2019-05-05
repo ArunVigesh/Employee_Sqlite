@@ -17,19 +17,25 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        //Button log = findViewById(R.id.button3);
+        postData();
+        Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_SHORT).show();
 
+        Button log = findViewById(R.id.button);
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(i);
 
-                postData();
-                Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_SHORT).show();
-
+            }
+        });
     }
     public void postData() {
         EditText Id, Name, Phone, Password, Email;
 
-        /*Id = findViewById(R.id.editText5);
+        Id = findViewById(R.id.editText5);
         int i = Integer.parseInt(Id.getText().toString());
-        inp.setId(i);*/
+        inp.setId(i);
         Name = findViewById(R.id.editText);
         inp.setName(Name.getText().toString());
         Email = findViewById(R.id.editText3);
